@@ -21,7 +21,6 @@ function addAssignment() {
     <h2>Add Homework</h2>
 
     <input v-model="title" placeholder="Homework title" />
-    
     <input type="date" v-model="dueDate" />
 
     <button @click="addAssignment">Add</button>

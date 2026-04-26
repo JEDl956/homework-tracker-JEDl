@@ -22,9 +22,15 @@ const store = useAssignmentStore()
 
         <br />
 
-        <!-- ✅ Show Due Date -->
+        <!-- ✅ Formatted Due Date MM-DD-YYYY -->
         <small v-if="assignment.dueDate">
-          📅 Due: {{ assignment.dueDate }}
+          📅 Due: {{
+            new Date(assignment.dueDate).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit'
+            }).replace(/\//g, '-')
+          }}
         </small>
 
         <br />
