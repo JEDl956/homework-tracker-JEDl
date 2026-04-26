@@ -14,10 +14,11 @@ export const useAssignmentStore = defineStore('assignment', {
   },
 
   actions: {
-    addAssignment(title) {
+    addAssignment(title, dueDate) {
       this.assignments.push({
         id: Date.now(),
         title,
+        dueDate,
         completed: false
       })
     },
@@ -29,6 +30,10 @@ export const useAssignmentStore = defineStore('assignment', {
 
     deleteAssignment(id) {
       this.assignments = this.assignments.filter(a => a.id !== id)
+    },
+
+    clearAll() {
+      this.assignments = []
     }
   }
 })
