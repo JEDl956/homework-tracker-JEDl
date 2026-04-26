@@ -24,8 +24,8 @@ import AssignmentStats from './components/AssignmentStats.vue'
 
 <style scoped>
 main {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 650px;
+  margin: 60px auto;
   text-align: center;
   font-family: Arial, sans-serif;
 }
@@ -38,17 +38,18 @@ h1 {
 
 /* Card sections */
 .card {
-  background: #f9fafb;
+  background: #ffffff;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
 /* Buttons */
 button {
-  margin-left: 10px;
-  padding: 5px 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 6px 12px;
   border: none;
   background-color: #4f46e5;
   color: white;
@@ -62,8 +63,14 @@ button:hover {
 
 /* Input */
 input {
-  padding: 5px;
+  padding: 6px;
+  margin-right: 5px;
   border-radius: 6px;
   border: 1px solid #ccc;
+}
+
+/* Add spacing between sections */
+.card + .card {
+  margin-top: 15px;
 }
 </style>
