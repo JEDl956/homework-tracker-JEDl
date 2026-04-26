@@ -12,13 +12,33 @@ const store = useAssignmentStore()
 
     <ul>
       <li v-for="assignment in store.assignments" :key="assignment.id">
-        <span :style="{ textDecoration: assignment.completed ? 'line-through' : 'none' }">
+        
+        <span :style="{
+          textDecoration: assignment.completed ? 'line-through' : 'none',
+          color: assignment.completed ? 'gray' : 'black'
+        }">
           {{ assignment.title }}
         </span>
 
-        <button @click="store.toggleComplete(assignment.id)">Done</button>
+        <br />
+
+        <!-- ✅ Show Due Date -->
+        <small v-if="assignment.dueDate">
+          📅 Due: {{ assignment.dueDate }}
+        </small>
+
+        <br />
+
+        <button @click="store.toggleComplete(assignment.id)">Complete</button>
         <button @click="store.deleteAssignment(assignment.id)">Delete</button>
+
       </li>
     </ul>
   </div>
 </template>
+
+<style scoped>
+li {
+  margin-bottom: 12px;
+}
+</style>
